@@ -1,3 +1,4 @@
+package utilidades;
 /**
  * Representa una fecha con día, mes y año.
  * @author
@@ -61,7 +62,7 @@ public class Fecha {
         return dia <= getDiasEnMes(mes, anio);
     }
 
-    private static int getDiasEnMes(int mes, int anio) {
+    public static int getDiasEnMes(int mes, int anio) {
         int[] diasPorMes = {31,28,31, 30,31, 30,31,31, 30,31, 30,31};
         int dias= diasPorMes[mes-1];
         if (mes==2 && esBisiesto(anio)) {
@@ -70,7 +71,7 @@ public class Fecha {
         return dias;
     }
 
-    private static boolean esBisiesto(int anio) {
+    public static boolean esBisiesto(int anio) {
         if ( (anio % 400 == 0) ||
                 ( (anio % 4 == 0) && (anio % 100 != 0) ) )
             return true;
